@@ -7,15 +7,19 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectDetailsComponent } from './components/projects/project-details/project-details.component';
+import { HomeComponent } from './components/home/home.component';
+import {AppRouterModule} from "./app.routes";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProjectsComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    HomeComponent
   ],
   imports: [
+    AppRouterModule,
     BrowserModule,
     FormsModule,
     HttpModule
