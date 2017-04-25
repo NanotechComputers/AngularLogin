@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+/*Bootstrap overrides and additions*/
+
+.btn{
+  &.no-radius{
+    border-radius: 0 !important;
+  }
+}
