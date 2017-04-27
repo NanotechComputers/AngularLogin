@@ -9,6 +9,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectDetailsComponent } from './components/projects/project-details/project-details.component';
 import { HomeComponent } from './components/home/home.component';
 import {AppRouterModule} from "./app.routes";
+import {OAuthModule} from "./services/index";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {AppRouterModule} from "./app.routes";
     AppRouterModule,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    OAuthModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
