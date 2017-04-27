@@ -3,6 +3,7 @@ import {HomeComponent} from "./components/home/home.component";
 import {ProjectsComponent} from "./components/projects/projects.component";
 import {ProjectDetailsComponent} from "./components/projects/project-details/project-details.component";
 import {LoginComponent} from "./components/login/login.component";
+import {AuthGuard} from "./guards/auth.guard";
 
 let APP_ROUTES: Routes = [
   {
@@ -13,7 +14,7 @@ let APP_ROUTES: Routes = [
 
     path: 'app',
     component: HomeComponent,
-    //canActivate: [true], //TODO: Add Auth Guard,
+    canActivate: [AuthGuard],
     children: [{
         path: '', redirectTo: 'projects', pathMatch: 'full'
       }, {
