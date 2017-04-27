@@ -1,3 +1,24 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 form-box">
+      <div><img src="/assets/images/logo.jpg" alt="Logo" class="center-block img-responsive"></div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Enter your email and password below to login</h4>
+          <div class="form-group">
+            <label>Email</label>
+            <input class="form-control no-radius" [(ngModel)]="userName">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input class="form-control no-radius" type="password" [(ngModel)]="password">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success btn-block btn-login no-radius" (click)="login()">Login</button>
+            <!--<button class="btn btn-default" (click)="logout()">Logout</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
