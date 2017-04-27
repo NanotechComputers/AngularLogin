@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  tokenBaseUrl: 'http://userservice.staging.tangentmicroservices.com'
 };
