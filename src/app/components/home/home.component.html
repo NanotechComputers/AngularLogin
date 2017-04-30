@@ -1,1 +1,37 @@
-<router-outlet></router-outlet>
+<div id="wrapper" [ngClass]="{'toggled': !showSidebar}">
+  <aside id="sideBar">
+    <ul class="main-nav">
+      <li class="nav-brand">
+        <a routerLink="/"><img src="assets/images/logo.png" alt="" class="img-responsive"></a>
+      </li>
+      <li>
+        <a routerLink="/">Home</a>
+      </li>
+      <li>
+        <a routerLink="/">List Projects</a>
+      </li>
+      <li>
+        <a routerLink="/">Add new Project</a>
+      </li>
+      <li>
+        <a routerLink="/login">Logout</a>
+      </li>
+    </ul>
+  </aside>
+  <section class="main-section">
+    <nav class="navbar header-navbar">
+      <ul class="header-menu left-links list-inline list-unstyled">
+        <li class="hidden-xs">
+          <a (click)="sidebarToggle()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</div>
+
+

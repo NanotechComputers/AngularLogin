@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+body{
+  background-color: #eee;
+}
+
 /*Bootstrap overrides and additions*/
 
 .btn{
@@ -10,4 +15,42 @@
 
 input, select{
   border-radius: 0 !important;
+}
+
+/*
+  Nav Menu
+*/
+nav {
+  &.navbar {
+    border: 0;
+    border-radius: 0 !important;
+    &.header-navbar {
+      background-color: #fff;
+      min-height: 0;
+      border: 0;
+      padding: 0;
+
+      .header-menu {
+        margin: 0;
+        &.left-links {
+          float: left;
+        }
+
+        > li{
+          cursor: pointer;
+        }
+
+        > li > a {
+          position: relative;
+          display: block;
+          padding: 30px 20px;
+          color: #979898;
+          border-bottom: 1px solid #fff;
+          top: 1px;
+          z-index: 5;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
