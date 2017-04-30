@@ -11,7 +11,11 @@ import {OAuthService} from "../../services/oauthservice/auth-service.service";
     }
   `]
 })
-export class LoginComponent {
+export class LoginComponent  implements OnInit {
+
+  ngOnInit(): void {
+    this.oAuthService.logOut(true);
+  }
 
   userName: string = '';
   password: string = '';
