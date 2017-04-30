@@ -1,20 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-body{
+body {
   background-color: #eee;
 }
 
 /*Bootstrap overrides and additions*/
 
-.btn{
-  &.no-radius{
+.btn {
+  &.no-radius {
     border-radius: 0 !important;
   }
 }
 
-input, select{
+input, select {
   border-radius: 0 !important;
+}
+
+.panel {
+  border-radius: 0;
+  > .panel-heading {
+    border-radius: 0;
+    color: #FFF;
+    background: #64676c;
+    opacity: .99;
+  }
+}
+
+/*
+Font Awesome
+*/
+
+.fa {
+  cursor: pointer;
+
+  &.pull-right {
+    margin-left: .6em;
+  }
+
+  &.fa-check {
+    color: darkgreen;
+  }
+
+  &.fa-times {
+    color: darkred;
+  }
 }
 
 /*
@@ -22,6 +51,7 @@ input, select{
 */
 nav {
   &.navbar {
+    margin-bottom: 0;
     border: 0;
     border-radius: 0 !important;
     &.header-navbar {
@@ -36,7 +66,7 @@ nav {
           float: left;
         }
 
-        > li{
+        > li {
           cursor: pointer;
         }
 
@@ -46,11 +76,20 @@ nav {
           padding: 30px 20px;
           color: #979898;
           border-bottom: 1px solid #fff;
-          top: 1px;
           z-index: 5;
           text-decoration: none;
         }
       }
     }
+  }
+}
+
+
+/*Projects Listing Page*/
+
+app-projects{
+  h1{
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 }

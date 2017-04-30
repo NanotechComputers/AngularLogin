@@ -1,3 +1,7 @@
-<p>
-  projects works!
-</p>
+<h1>
+  Projects
+</h1>
+
+<div class="row">
+  <project *ngFor="let project of projects" [projectItem]="project"></project>
+</div>
