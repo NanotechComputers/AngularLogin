@@ -59,7 +59,7 @@ export class OAuthService {
       this.http.post(this.tokenEndpoint, params, {headers}).map(r => r.json()).subscribe(
         (tokenResponse) => {
           console.debug('tokenResponse', tokenResponse);
-          this.storeAccessTokenResponse(tokenResponse.access_token, tokenResponse.refresh_token, tokenResponse.expires_in);
+          this.storeAccessTokenResponse(tokenResponse.token, "", tokenResponse.expires_in || 7200);
 
           resolve(tokenResponse);
         },
@@ -85,7 +85,7 @@ export class OAuthService {
   }
 
   private storeAccessTokenResponse(accessToken: string, refreshToken: string, expiresIn: number) {
-    this._storage.setItem("access_token", accessToken);
+    this._storage.setItem("token", accessToken);
 
     if (expiresIn) {
       let expiresInMilliSeconds = expiresIn * 1000;
@@ -106,7 +106,7 @@ export class OAuthService {
 
     let parts = this.getFragment();
 
-    let accessToken = parts["access_token"];
+    let accessToken = parts["token"];
     let idToken = parts["id_token"];
     let state = parts["state"];
 
@@ -162,7 +162,7 @@ export class OAuthService {
   }
 
   getAccessToken() {
-    return this._storage.getItem("access_token");
+    return this._storage.getItem("token");
   };
 
   hasValidAccessToken() {
@@ -180,7 +180,7 @@ export class OAuthService {
 
   logOut(noRedirectToLogoutUrl: boolean = false) {
     let id_token = this.getIdToken();
-    this._storage.removeItem("access_token");
+    this._storage.removeItem("token");
     this._storage.removeItem("id_token");
     this._storage.removeItem("refresh_token");
     this._storage.removeItem("nonce");
@@ -195,7 +195,7 @@ export class OAuthService {
 
     // For backward compatibility
     if (this.logoutUrl.indexOf('{{') > -1) {
-      logoutUrl = this.logoutUrl.replace(/\{\{id_token\}\}/, id_token);
+      logoutUrl = this.logoutUrl.replace(/\{\{token\}\}/, id_token);
     }
     else {
       logoutUrl = this.logoutUrl + "?id_token_hint="
