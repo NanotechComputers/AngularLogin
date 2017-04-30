@@ -10,6 +10,7 @@ import { ProjectDetailsComponent } from './components/projects/project-details/p
 import { HomeComponent } from './components/home/home.component';
 import {AppRouterModule} from "./app.routes";
 import {OAuthModule} from "./services/index";
+import {AuthGuard} from "./guards/auth.guard";
 
 @NgModule({
   declarations: [
@@ -24,9 +25,9 @@ import {OAuthModule} from "./services/index";
     BrowserModule,
     FormsModule,
     HttpModule,
-    OAuthModule.forRoot(),
+    OAuthModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
