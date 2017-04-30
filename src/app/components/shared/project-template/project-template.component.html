@@ -1,0 +1,34 @@
+<div class="col-md-4 col-sm-6">
+  <div class="panel">
+    <div class="panel-heading">{{data?.title}}
+      <span>
+        <i class="fa fa-trash-o pull-right" aria-hidden="true" (click)="deleteProject(data?.pk)"></i>
+        <i class="fa fa-pencil pull-right" aria-hidden="true" (click)="editProject(data?.pk)"></i>
+      </span>
+    </div>
+    <div class="panel-body">
+      <div class="description">
+        {{data?.description}}
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <p><strong>Start Date:</strong> <span>{{data?.start_date|date: 'dd MMMM yyyy'}}</span></p>
+        </div>
+        <div class="col-sm-6">
+          <p><strong>End Date:</strong> <span>{{data?.end_date|date: 'dd MMMM yyyy'}}</span></p>
+        </div>
+        <div class="col-xs-12">
+          <p><strong>Billable:</strong> <i class="fa" [ngClass]="{'fa-check': data?.is_billable, 'fa-times': !data?.is_billable}" aria-hidden="true" (click)="setBillable(data?.pk)"></i></p>
+        </div>
+        <div class="col-xs-12">
+          <p><strong>Active:</strong> <i class="fa" [ngClass]="{'fa-check': data?.is_active, 'fa-times': !data?.is_active}" aria-hidden="true" (click)="setActive(data?.pk)"></i></p>
+        </div>
+        <div class="col-xs-12 text-right">
+          <span ><strong>Tasks:</strong> {{data?.task_set?.length}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

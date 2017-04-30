@@ -1,0 +1,6 @@
+.description {
+  line-height: 2.5ex;
+  height: 7.5ex; /* 2.5ex for each visible line */
+  overflow: hidden;
+  overflow-y:auto /*TODO: Change this to a more stylish scrollbar. https://www.npmjs.com/package/angular2-perfect-scrollbar*/
+}
