@@ -10,6 +10,15 @@ body {
   &.no-radius {
     border-radius: 0 !important;
   }
+
+  &.pull-right {
+    margin-left: .6em;
+  }
+
+  &.pull-left {
+    margin-right: .6em;
+  }
+
 }
 
 input, select {
@@ -84,11 +93,10 @@ nav {
   }
 }
 
-
 /*Projects Listing Page*/
 
-app-projects{
-  h1{
+app-projects {
+  h1 {
     margin-top: 10px;
     margin-bottom: 20px;
   }

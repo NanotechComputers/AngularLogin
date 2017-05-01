@@ -14,7 +14,6 @@ export class ProjectTemplateComponent {
 
   public editProject(id:number){
     //noinspection JSIgnoredPromiseFromCall
-    console.log(id);
     this.router.navigate(['/app/project', id]);
   }
 
