@@ -13,6 +13,7 @@ import {AuthGuard} from "./guards/auth.guard";
 import {ProjectsDataLayer} from "./store/projects.datalayer";
 import { ProjectTemplateComponent } from './components/shared/project-template/project-template.component';
 import { ProjectComponent } from './components/projects/project.component';
+import {ProjectDataLayer} from "./store/project.datalayer";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ProjectComponent } from './components/projects/project.component';
     OAuthModule.forRoot()
   ],
   providers: [AuthGuard,
-    ProjectsDataLayer],
+    ProjectsDataLayer, ProjectDataLayer],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
