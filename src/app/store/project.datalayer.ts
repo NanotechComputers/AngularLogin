@@ -26,19 +26,19 @@ export class ProjectDataLayer {
   }
 
   get(id:number) {
-    return this.http.get(`${BASE_URL}/projects/${id}`, this.options)
+    return this.http.get(`${BASE_URL}/projects/${id}/`, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
   update(payload:ProjectModel){
-    return this.http.patch(`${BASE_URL}/projects/${payload.pk}`, payload, this.options)
+    return this.http.patch(`${BASE_URL}/projects/${payload.pk}/`, payload, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
   delete(id:number){
-    return this.http.delete(`${BASE_URL}/projects/${id}`, this.options)
+    return this.http.delete(`${BASE_URL}/projects/${id}/`, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }
