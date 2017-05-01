@@ -8,7 +8,14 @@ import {Location} from '@angular/common';
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styles: []
+  styles: [`
+  input[type=checkbox]{
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    margin-right: 4px;
+  }
+  `]
 })
 export class ProjectComponent implements OnInit {
 
@@ -29,7 +36,11 @@ export class ProjectComponent implements OnInit {
       'projectDetails': this.formBuilder.group({
         'pk': new FormControl(0, [Validators.required]),
         'title': new FormControl('', [Validators.required, Validators.minLength(5)]),
-        'description': new FormControl('', [Validators.required])
+        'description': new FormControl('', [Validators.required]),
+        'start_date': new FormControl('', [Validators.required]),
+        'end_date': new FormControl('', [Validators.required]),
+        'is_billable': new FormControl(false, [Validators.required]),
+        'is_active': new FormControl(false, [Validators.required])
       })
     });
   }
@@ -44,11 +55,17 @@ export class ProjectComponent implements OnInit {
   }
 
   private buildForm() {
+    let startDate = new Date(this.project.start_date);
+    let endDate = new Date(this.project.end_date);
     this.projectForm = this.formBuilder.group({
       'projectDetails': this.formBuilder.group({
         'pk': new FormControl(this.project.pk, [Validators.required]),
         'title': new FormControl(this.project.title, [Validators.required, Validators.minLength(5)]),
-        'description': new FormControl(this.project.description, [Validators.required])
+        'description': new FormControl(this.project.description, [Validators.required]),
+        'start_date': new FormControl(`${startDate.toISOString().substr(0, 10)}`, [Validators.required]),
+        'end_date': new FormControl(`${endDate.toISOString().substr(0, 10)}`, [Validators.required]),
+        'is_billable': new FormControl(this.project.is_billable, [Validators.required]),
+        'is_active': new FormControl(this.project.is_active, [Validators.required])
       })
     });
   }

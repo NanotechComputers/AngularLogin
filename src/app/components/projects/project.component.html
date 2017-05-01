@@ -20,6 +20,30 @@
               <input type="text" class="form-control" id="description" formControlName="description"/>
             </div>
           </div>
+          <div class="col-sm-6">
+            <div class="form-group" [ngClass]="getFormGroupClasses('projectDetails', 'start_date')">
+              <label class="control-label" for="start_date">Start Date</label>
+              <input type="date" class="form-control" id="start_date" formControlName="start_date"/>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group" [ngClass]="getFormGroupClasses('projectDetails', 'end_date')">
+              <label class="control-label" for="end_date">End Date</label>
+              <input type="date" class="form-control" id="end_date" formControlName="end_date"/>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group" [ngClass]="getFormGroupClasses('projectDetails', 'is_billable')">
+              <input type="checkbox" class="form-control pull-left" id="is_billable" formControlName="is_billable"/>
+              <label class="control-label pull-left" for="is_billable">Billable</label>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group" [ngClass]="getFormGroupClasses('projectDetails', 'is_active')">
+              <input type="checkbox" class="form-control pull-left" id="is_active" formControlName="is_active"/>
+              <label class="control-label pull-left" for="is_active">Active</label>
+            </div>
+          </div>
         </div>
         <div class="row">
           <div class="col-sm-12">
