@@ -1,9 +1,9 @@
 import {PreloadAllModules, RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./components/home/home.component";
 import {ProjectsComponent} from "./components/projects/projects.component";
-import {ProjectDetailsComponent} from "./components/projects/project-details/project-details.component";
 import {LoginComponent} from "./components/login/login.component";
 import {AuthGuard} from "./guards/auth.guard";
+import {ProjectComponent} from "./components/projects/project.component";
 
 let APP_ROUTES: Routes = [
   {
@@ -20,7 +20,7 @@ let APP_ROUTES: Routes = [
       }, {
         path: 'projects', component: ProjectsComponent
       }, {
-        path: 'project/:id', component: ProjectDetailsComponent
+        path: 'project/:id', component: ProjectComponent
       }]
   }, {
     path: 'login',
